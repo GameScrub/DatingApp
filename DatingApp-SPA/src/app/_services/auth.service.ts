@@ -24,7 +24,6 @@ export class AuthService {
           if (user) {
             localStorage.setItem('token', user.token);
             this.decodedToken = this.jwtHelper.decodeToken(user.token);
-            console.log(this.decodedToken);
           }
         })
       );
@@ -38,7 +37,4 @@ export class AuthService {
     const token = localStorage.getItem('token');
     return !this.jwtHelper.isTokenExpired(token);
   }
-
-
-
 }
